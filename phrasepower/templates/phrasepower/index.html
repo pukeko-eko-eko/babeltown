@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+	{% block body %}
+
+	<h2>Hello. Welcome to ((PhrasePower)).</h2>
+
+	{% if phrase_list %}
+	    <p>
+	    <ul>
+	    {% for phrase in phrase_list %}
+		<li><a href="{% url 'phrasepower:showphrase' phrase.id %}">{{ phrase.phrase_alphabet }}</a> {{ phrase.language }}</li>
+	    {% endfor %}
+	    </ul>
+	    </p>
+	{% else %}
+	    <p>No phrases are available.</p>
+	{% endif %}
+
+	<p>
+	Add new phrase..<a href="{% url 'phrasepower:addphrase' %}">Add phrase</a>(put link for input form here)
+
+	</p>
+
+	{% endblock %}

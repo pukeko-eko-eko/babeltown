@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+	{% block body %}
+
+	<p>
+		<h2>You have just submitted this phrase: </h2>
+		<h3>{{ phrase }}</h3>
+		<h2>The language is: </h2>
+		<h3>{{ phrase.language }}</h3>	
+		<h2>In other languages it is: </h2>
+		<h3> (Put tag here for matching phrase)</h3>	
+	</p>
+
+	<p>
+	Go back to the index...<a href="{% url 'phrasepower:index' %}">Go to index</a>
+	</p>
+
+	THIS TEMPLATE IS NOT USED YET....CHANGE VIEWS.PY/SUBMITPHRASE
+
+	{% endblock %}

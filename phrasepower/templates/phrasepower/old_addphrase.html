@@ -1,0 +1,21 @@
+<h2>Add a new phrase</h2>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'phrasepower:submitphrase' %}" method="post">
+{% csrf_token %}
+
+    New phrase:<input type="text" name="newphrase"  />
+    <label >I am the label text</label><br />
+    <br />
+    #Change this to use a proper drop-down list ( use Select tag)
+    Choose language:<input type="text" name="language"  />(English=1, Italian=2, French=3)
+    <br />
+    <br />
+
+    <input type="submit" value="Add phrase" />
+</form>
+
+<p>
+Go back to the index...<a href="{% url 'phrasepower:index' %}">Go to index</a>
+</p>

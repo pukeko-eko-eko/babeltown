@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+	{% block body %}
+	<p>
+		<h2>Here's your phrase: </h2>
+		<h3>{{ phrase }}</h3>
+		<h3>{{ phrase.phrase_original }}</h3>
+		<h2>The language is: </h2>
+		<h3>{{ phrase.language }}</h3>	
+		<h2>In other languages it is: </h2>
+		 {% if phrase.equivalent_phrases %}<h3>{{ phrase.equivalent_phrases.all }}</h3>	{% endif %}
+	</p>
+
+	<p>
+	<br>
+	<br>
+	<a href="{% url 'phrasepower:index' %}">Go back to index</a>
+	</p>
+	{% endblock %}
